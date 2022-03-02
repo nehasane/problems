@@ -1,1 +1,31 @@
 https://codeforces.com/problemset/problem/580/A
+
+despite what the tags say, this is NOT a dp problem.
+Use a pointer to keep track of the largest subarray where all elements are non-decreasing. 
+Anytime a number is larger than the previous, a new subarray starts. the answer is the 
+largest of these subarray sizes.
+
+code
+
+#include <bits/stdc++.h>
+using namespace std;
+const int MAX_N = 1e5;
+int nums[MAX_N];
+int main()
+{
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+        cin >> nums[i];
+    int ans = 0, len = 0;
+    for (int i = 0; i < n; i++) {
+        if (nums[i] >= nums[i-1]) {
+            len++;
+        } else {
+            ans = max(ans, len);
+            len = 1;
+        }
+    }
+    ans = max(ans, len);
+    cout << ans << '\n';
+}
