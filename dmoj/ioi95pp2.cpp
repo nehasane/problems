@@ -3,11 +3,11 @@
 think of this as a graph proble, where the words are nodes, and a directed edge is drawn from word1 to word2, if by adding some letters to the end of word1, we get word2.
 In other words, a directed edge is drawn from word1 to word2 if word1 is a subtring of word2.
 
-in the end, there will be a directed acyclic graph(s) of words. all that's left to do is run a dfs from every node(not visited!) and calculate the length of the 
-longest path, assuming that the current node is the end of the path.
+in the end, there will be a directed acyclic graph(s) of words. all that's left to do is run a dfs from every node(not visited!), find the longest path (because the
+question wants the longest list) while maintaining an array (in my code, it's came_from)
 
 BUT WAIT
-i tried that, but i got MLE in the last test case:(.
+i tried that, but i got MLE in the last test case:(
 so, instead of doing a dfs(which requires a visited array, and adjacency list and stuff that requires loads of memory), do this:
 since the parent of the node (which is also the end of the path) is a substring of the node, we can pop_back() letters from the current word (let's call this modifed word mword),
 and find the length of the longest path that ended mword.
