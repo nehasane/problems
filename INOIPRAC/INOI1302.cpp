@@ -5,6 +5,9 @@ determining whether or not two people are related is pretty straightforward: cou
 
 based on this, create an adjacency list and start a dfs from person1 (the president) and count the number of nodes visited. that's your answer!
 
+just to make counting the number of common elements between two people a little faster, i store the elements of each person in a set; that way i can check whether an
+element is common or not in log(E) time, where E is the number of elements a person has.
+
 */
 #include <bits/stdc++.h>
 using namespace std;
