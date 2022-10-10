@@ -37,15 +37,8 @@ now that the basic pieces are in order, here's the final algorithm:
       array, doesn't account for toggling between two numbers, since it only considers each pair of numbers once.
       still, the answer may not require to toggle between two numbers (if L = N), so it's easier to just set the minimum possible answer to "base_ans".
    - the binary search modifications
-      while i didn't completely understand why the standard (https://usaco.guide/CPH.pdf page 32, method 1) binary search implementation didn't work, i did understand
-      how to get to one that DID work.
-      
-      let's say that i wanted my sure-shot final answer to be "lo". so in the binary search, if the length condition was satisfied, then i set "lo" to mid, since 
-      we know that a sequence with cost at least mid has a length of at least L. 
-      
-      now if we don't increase lo, then there's a chance of the binary loop entering an infinite loop. so we take the ceiling of mid, and then similar things happen:
-      if this checks out too, then the binary search could set into a infinite loop. so finally, we change the binary search condition to "lo < mid" to finally fix that.
-      why didn't we just directly change the binary search condition instead of changing the "mid" calculation method? idk honestly.
+      unfortunately, this binary search implementation (https://usaco.guide/CPH.pdf page 32, method 1) doesn't work for all purposes of binary search
+      THIS (https://usaco.guide/silver/binary-search?lang=cpp) has a goood explanation on how binary search is modified tos uit different flavours of it.
 
 */
 #include <bits/stdc++.h>
