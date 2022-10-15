@@ -42,6 +42,9 @@ without the memory constraints, the problem is quite simple to solve (v1):
                 dp[curr_row][j] = dp[prev_row][j] + 1;
             else
                 dp[curr_row][j] = dp[prev_row][j], dp[i][j-1];
+                
+     NOTE: in v2's implementation, i have added a dummy character at the start of 
+     S and Sr, just so that the strings will be 1-indexed.
         
 
 */
