@@ -1,3 +1,4 @@
+// v1
 #include <bits/stdc++.h>
 using namespace std;
 int N;
@@ -28,4 +29,28 @@ int main() {
         ans = min({ans, solve(i-1, i+1), solve(i, i+1)});
     }
     cout << ans << '\n';
+}
+// v2
+#include <bits/stdc++.h>
+using namespace std;
+int N;
+string S, Sr;
+const int MAX_N = 5000;
+int dp[2][MAX_N];
+int main() {
+    cin >> N >> S;
+    Sr = S;
+    reverse(Sr.begin(), Sr.end());
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (S[i] == Sr[j])
+                dp[1][j] = dp[0][j-1] + 1;
+            else if (j-1 >= 0)
+                dp[1][j] = max(dp[0][j], dp[1][j-1]);
+            else
+                dp[1][j] = dp[0][j];
+        }
+        swap(dp[0], dp[1]);
+    }
+    cout << N - dp[0][N-1] << '\n';
 }
