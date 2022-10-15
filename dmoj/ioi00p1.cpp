@@ -35,22 +35,23 @@ int main() {
 using namespace std;
 int N;
 string S, Sr;
-const int MAX_N = 5000;
+const int MAX_N = 5001;
 int dp[2][MAX_N];
 int main() {
     cin >> N >> S;
     Sr = S;
     reverse(Sr.begin(), Sr.end());
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+    S.insert(0, "0");
+    Sr.insert(0, "0");
+    int curr = 1, prev = 0;
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= N; j++) {
             if (S[i] == Sr[j])
-                dp[1][j] = dp[0][j-1] + 1;
-            else if (j-1 >= 0)
-                dp[1][j] = max(dp[0][j], dp[1][j-1]);
+                dp[curr][j] = dp[prev][j-1] + 1;
             else
-                dp[1][j] = dp[0][j];
+                dp[curr][j] = max(dp[prev][j], dp[curr][j-1]);
         }
-        swap(dp[0], dp[1]);
+        swap(curr, prev);
     }
-    cout << N - dp[0][N-1] << '\n';
+    cout << N - dp[prev][N] << '\n';
 }
