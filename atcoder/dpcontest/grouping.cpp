@@ -17,6 +17,8 @@
     the sum of the two dp values represented by these submasks.
     
     consider all the submasks and take the maximum value over all pairs.
+    
+    here's a good link for the submasks logic - https://cp-algorithms.com/algebra/all-submasks.html
 */
 #include <bits/stdc++.h>
 using namespace std;
