@@ -1,4 +1,7 @@
 /*
+    good similar problem to understand the differences between the two methods:
+    http://www.usaco.org/index.php?page=viewproblem2&cpid=1114
+    
     let dp[l][r] be the minimum number of moves required to destroy
     all the stones in the range l..r.
     
