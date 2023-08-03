@@ -15,8 +15,8 @@
 
     this is how we can find out the positions of thw cows after one iteration without
     actually moving them. we can similarly find the positions of the cows after 2, 4,
-    8 and other iterations that are a power of 2 in the same way we calculate the ancestors 
-    of nodes in lca.
+    8 and other iterations that are a power of 2 in the same way we calculate the calculate
+    the values in a successor graph table.
 
     to find out the final positions of cows after k iterations, all we need to do is break 
     down k into powers of 2 that sum up to k and use the same logic to find the positions.
