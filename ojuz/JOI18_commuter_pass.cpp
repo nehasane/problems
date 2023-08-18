@@ -1,7 +1,25 @@
 /*
 
     problem link: https://oj.uz/problem/view/JOI18_commuter_pass
-    algorithm used: graph theory
+    algorithm used: graph 
+
+    in this problem, the smallest possible cost of travelling from city U to V
+    needs to be computed if roads along the shortest path from city S to T are
+    free.
+
+    the obvious approach would be to mark a shortest path from S to T as free and
+    then run a dijkstra's to compute the answer. however there could be many
+    shortest paths from S to T, so running a dijkstra's for every sp will take
+    too long. 
+
+    compute distU[] and distV[] which store the shortest distance from U to any node
+    and likewise for V. 
+
+    when we approach node that is closer to V, distU[node] would increase, but
+    the actual cost could decrease as we would we utilising some roads that are
+    free.
+    every node on the shortest path has a parent or multiple parents that give them
+    the optimal answer.
     
 
 */
