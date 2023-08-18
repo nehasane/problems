@@ -24,11 +24,17 @@
     u visits that is on the shortest path, but it is on the shortest path, then
     the cost for u is the cost of visiting the parent of x, since the cost of going
     from x's parent to x is free.
-    
- 
-    
-    
-    
+
+    this is how we get the dp equation:
+    dpU[node] = min(distU[node], dpU[parent])
+
+    we do the same for calculating dpV[]
+
+    we calculate dpU[] and dpV[] while running a dijkstra's from S so that we can calculate
+    the nodes on the shortest path properly. run the dijkstra's from T too. 
+
+    the answer is dpU[end] + dpV[end] for each of the 2 dijkstra runs as the end (which would
+    be S or T) is the 
     
 
 */
