@@ -12,14 +12,23 @@
     shortest paths from S to T, so running a dijkstra's for every sp will take
     too long. 
 
+    
     compute distU[] and distV[] which store the shortest distance from U to any node
-    and likewise for V. 
+    and likewise for V.
 
-    when we approach node that is closer to V, distU[node] would increase, but
-    the actual cost could decrease as we would we utilising some roads that are
-    free.
-    every node on the shortest path has a parent or multiple parents that give them
-    the optimal answer.
+    think of the answer as travelling from u -> x -> y -> v where the path 
+    x -> y in on the shortest path from s -> t. so we need to find a path
+    from u -> x and a path from v -> y. let's focus on finding u -> x first.
+    let's suppose x is the first node the u visits that is on the shortest path.
+    in that case, the cost would be distU[node]. but if x is not the first node that
+    u visits that is on the shortest path, but it is on the shortest path, then
+    the cost for u is the cost of visiting the parent of x, since the cost of going
+    from x's parent to x is free.
+    
+ 
+    
+    
+    
     
 
 */
