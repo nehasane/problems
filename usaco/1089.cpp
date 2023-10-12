@@ -20,6 +20,10 @@
     let's say we want to add a letter to this mask. we can loop over all
     letters in the mask and add adjacent[new_letter][letter] to 
     dp[mask + (1 << new_letter)].
+    note: it doesn't matter whether we add adjacent[new_letter][letter]
+    to the answer or adjacent[letter][new_letter] since we don't care
+    about the order of the letters in the cowphabet; we only care about
+    the cost.
 
 */
 #include <iostream>
